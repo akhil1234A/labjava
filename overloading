@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Overload {
+    double area(float l, float w, float b) {
+        return l * w * b;
+    }
+
+    double area(float l) {
+        return l * l * l;
+    }
+
+    double area(float r, float h) {
+        return 3.14 * r * r * h;
+    }
+}
+
+public class MathOver {
+    public static void main(String args[]) {
+        Overload ov = new Overload();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the length, width, and height of the rectangular box:");
+        float l = sc.nextFloat();
+        float w = sc.nextFloat();
+        float h = sc.nextFloat();
+
+        double rect = ov.area(l, w, h);
+        System.out.println("Volume of rectangular box: " + rect);
+
+        System.out.println("Enter the edge length of the Cube:");
+        float e = sc.nextFloat();
+        double cube = ov.area(e);
+        System.out.println("Volume of Cube: " + cube);
+
+        System.out.println("Enter the radius and height of the Cylinder:");
+        float r = sc.nextFloat();
+        float hi = sc.nextFloat();
+        double cyli = ov.area(r, hi);
+        System.out.println("Volume of Cylinder: " + cyli);
+    }
+}
